@@ -15,7 +15,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    let data : [String] = ["Task 1", "Task 2", "Task 3"]
+    let data : [String] = ["Task 1", "Task 2", "Task 3 - Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim et dolore magna aliqua."]
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "rows", for: indexPath) as! CustomTableViewCell
@@ -27,5 +27,15 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        return data.count
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            // handle delete (by removing the data from your array and updating the tableview)
+        }
     }
 }

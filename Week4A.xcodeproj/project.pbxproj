@@ -14,6 +14,7 @@
 		7977840E1E4160AB00D51C09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7977840C1E4160AB00D51C09 /* LaunchScreen.storyboard */; };
 		797784161E41688800D51C09 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797784151E41688800D51C09 /* CustomTableViewCell.swift */; };
 		797784181E41708500D51C09 /* ViewControllerDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797784171E41708500D51C09 /* ViewControllerDetail.swift */; };
+		7977841A1E41832500D51C09 /* ViewControllerAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797784191E41832500D51C09 /* ViewControllerAdd.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		7977840F1E4160AB00D51C09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		797784151E41688800D51C09 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		797784171E41708500D51C09 /* ViewControllerDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerDetail.swift; sourceTree = "<group>"; };
+		797784191E41832500D51C09 /* ViewControllerAdd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerAdd.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				7977840F1E4160AB00D51C09 /* Info.plist */,
 				797784151E41688800D51C09 /* CustomTableViewCell.swift */,
 				797784171E41708500D51C09 /* ViewControllerDetail.swift */,
+				797784191E41832500D51C09 /* ViewControllerAdd.swift */,
 			);
 			path = Week4A;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7977841A1E41832500D51C09 /* ViewControllerAdd.swift in Sources */,
 				797784161E41688800D51C09 /* CustomTableViewCell.swift in Sources */,
 				797784061E4160AA00D51C09 /* ViewController.swift in Sources */,
 				797784041E4160AA00D51C09 /* AppDelegate.swift in Sources */,

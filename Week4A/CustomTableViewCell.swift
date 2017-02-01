@@ -9,8 +9,8 @@
 import UIKit
 
 class CustomTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var cellLabel: UILabel!
+    
+    @IBOutlet weak var cellLabel: UITextView!
     
     @IBAction func switchChange(_ sender: UISwitch) {
         print("Switched")
@@ -18,7 +18,7 @@ class CustomTableViewCell: UITableViewCell {
         if (sender.isOn)
         {
             cellLabel.textColor = UIColor.black
-            cellLabel.font = UIFont.boldSystemFont(ofSize: 20)
+            //cellLabel.font = UIFont.boldSystemFont(ofSize: 20)
         }
         else
         {
