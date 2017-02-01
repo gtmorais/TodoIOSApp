@@ -13,7 +13,7 @@
         <!--Todo List-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Week4A" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TodoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -26,7 +26,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="rows" rowHeight="118" id="c1U-dI-XLm" customClass="CustomTableViewCell" customModule="Week4A" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="rows" rowHeight="118" id="c1U-dI-XLm" customClass="CustomTableViewCell" customModule="TodoApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="118"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="c1U-dI-XLm" id="Xnb-ii-OS5">
@@ -34,7 +34,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uvc-Ju-qh8">
-                                                    <rect key="frame" x="312" y="79" width="45" height="30"/>
+                                                    <rect key="frame" x="312" y="71" width="45" height="36"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <state key="normal" title="Edit"/>
                                                     <connections>
                                                         <action selector="editButton:" destination="c1U-dI-XLm" eventType="touchUpInside" id="tJj-cZ-qWp"/>
@@ -50,13 +52,14 @@
                                                 </textView>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qRY-mi-5MW">
                                                     <rect key="frame" x="311" y="8" width="51" height="31"/>
+                                                    <color key="onTintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <connections>
                                                         <action selector="switchChange:" destination="c1U-dI-XLm" eventType="valueChanged" id="Wxd-LK-Jrw"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Uvc-Ju-qh8" firstAttribute="bottom" secondItem="Xnb-ii-OS5" secondAttribute="bottomMargin" id="7xV-Of-Ee6"/>
+                                                <constraint firstItem="Uvc-Ju-qh8" firstAttribute="bottom" secondItem="Xnb-ii-OS5" secondAttribute="bottomMargin" constant="-2" id="7xV-Of-Ee6"/>
                                                 <constraint firstItem="qRY-mi-5MW" firstAttribute="centerX" secondItem="Uvc-Ju-qh8" secondAttribute="centerX" constant="1" id="FeR-F8-1ec"/>
                                                 <constraint firstItem="Uvc-Ju-qh8" firstAttribute="leading" secondItem="pZc-TS-dfn" secondAttribute="trailing" constant="8" symbolic="YES" id="KAU-QE-gzG"/>
                                                 <constraint firstItem="pZc-TS-dfn" firstAttribute="leading" secondItem="Xnb-ii-OS5" secondAttribute="leadingMargin" id="LYs-FD-Abi"/>
@@ -100,7 +103,7 @@
         <!--Details-->
         <scene sceneID="sYh-9D-hp8">
             <objects>
-                <viewController id="VmA-F1-Mun" customClass="ViewControllerDetail" customModule="Week4A" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="VmA-F1-Mun" customClass="ViewControllerDetail" customModule="TodoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cQB-01-NE0"/>
                         <viewControllerLayoutGuide type="bottom" id="GKj-IN-eoa"/>
@@ -110,7 +113,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Svs-yB-tFM">
-                                <rect key="frame" x="63" y="293" width="248" height="36"/>
+                                <rect key="frame" x="63" y="352" width="248" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -133,7 +136,7 @@
         <!--Add-->
         <scene sceneID="Irc-we-XrK">
             <objects>
-                <viewController id="A5B-Jf-Duo" customClass="ViewControllerAdd" customModule="Week4A" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="A5B-Jf-Duo" customClass="ViewControllerAdd" customModule="TodoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aO4-0n-fPW"/>
                         <viewControllerLayoutGuide type="bottom" id="h5c-Ua-Box"/>

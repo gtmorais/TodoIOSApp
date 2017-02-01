@@ -18,7 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		797784001E4160AA00D51C09 /* Week4A.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Week4A.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		797784001E4160AA00D51C09 /* TodoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		797784031E4160AA00D51C09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		797784051E4160AA00D51C09 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		797784081E4160AB00D51C09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -44,7 +44,7 @@
 		797783F71E4160AA00D51C09 = {
 			isa = PBXGroup;
 			children = (
-				797784021E4160AA00D51C09 /* Week4A */,
+				797784021E4160AA00D51C09 /* TodoApp */,
 				797784011E4160AA00D51C09 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -52,12 +52,12 @@
 		797784011E4160AA00D51C09 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				797784001E4160AA00D51C09 /* Week4A.app */,
+				797784001E4160AA00D51C09 /* TodoApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		797784021E4160AA00D51C09 /* Week4A */ = {
+		797784021E4160AA00D51C09 /* TodoApp */ = {
 			isa = PBXGroup;
 			children = (
 				797784031E4160AA00D51C09 /* AppDelegate.swift */,
@@ -70,15 +70,16 @@
 				797784171E41708500D51C09 /* ViewControllerDetail.swift */,
 				797784191E41832500D51C09 /* ViewControllerAdd.swift */,
 			);
+			name = TodoApp;
 			path = Week4A;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		797783FF1E4160AA00D51C09 /* Week4A */ = {
+		797783FF1E4160AA00D51C09 /* TodoApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 797784121E4160AB00D51C09 /* Build configuration list for PBXNativeTarget "Week4A" */;
+			buildConfigurationList = 797784121E4160AB00D51C09 /* Build configuration list for PBXNativeTarget "TodoApp" */;
 			buildPhases = (
 				797783FC1E4160AA00D51C09 /* Sources */,
 				797783FD1E4160AA00D51C09 /* Frameworks */,
@@ -88,9 +89,9 @@
 			);
 			dependencies = (
 			);
-			name = Week4A;
+			name = TodoApp;
 			productName = Week4A;
-			productReference = 797784001E4160AA00D51C09 /* Week4A.app */;
+			productReference = 797784001E4160AA00D51C09 /* TodoApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -110,7 +111,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 797783FB1E4160AA00D51C09 /* Build configuration list for PBXProject "Week4A" */;
+			buildConfigurationList = 797783FB1E4160AA00D51C09 /* Build configuration list for PBXProject "TodoApp" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -123,7 +124,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				797783FF1E4160AA00D51C09 /* Week4A */,
+				797783FF1E4160AA00D51C09 /* TodoApp */,
 			);
 		};
 /* End PBXProject section */
@@ -296,7 +297,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		797783FB1E4160AA00D51C09 /* Build configuration list for PBXProject "Week4A" */ = {
+		797783FB1E4160AA00D51C09 /* Build configuration list for PBXProject "TodoApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				797784101E4160AB00D51C09 /* Debug */,
@@ -305,7 +306,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		797784121E4160AB00D51C09 /* Build configuration list for PBXNativeTarget "Week4A" */ = {
+		797784121E4160AB00D51C09 /* Build configuration list for PBXNativeTarget "TodoApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				797784131E4160AB00D51C09 /* Debug */,
