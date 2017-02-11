@@ -15,7 +15,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    let data : [String] = ["Task 1", "Task 2", "Task 3 - Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim et dolore magna aliqua."]
+    let data : [String] = ["Task 1", "Task 2", "Task 3 - Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu"]
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "rows", for: indexPath) as! CustomTableViewCell

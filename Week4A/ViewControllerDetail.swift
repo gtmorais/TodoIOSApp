@@ -9,10 +9,10 @@
 import UIKit
 
 class ViewControllerDetail: UIViewController {
-
+    @IBOutlet weak var noteTextView: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        noteTextView?.contentInset = UIEdgeInsetsMake(-70.0,0.0,0,0.0)
         // Do any additional setup after loading the view.
     }
 
