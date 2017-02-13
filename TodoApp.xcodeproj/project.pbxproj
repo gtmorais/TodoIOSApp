@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2F9FAF145BDA2FA11D07430D /* Pods_TodoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B770F5F752A1EEC5A4EC49BC /* Pods_TodoApp.framework */; };
 		7936715E1E4F7FD800870EDF /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7936715D1E4F7FD800870EDF /* FirebaseManager.swift */; };
+		793671601E5259D200870EDF /* TodoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7936715F1E5259D200870EDF /* TodoManager.swift */; };
 		797784041E4160AA00D51C09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797784031E4160AA00D51C09 /* AppDelegate.swift */; };
 		797784061E4160AA00D51C09 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797784051E4160AA00D51C09 /* ViewController.swift */; };
 		797784091E4160AB00D51C09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 797784071E4160AB00D51C09 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		2C7CF601E6CEAE1884A31C9D /* Pods-TodoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodoApp/Pods-TodoApp.release.xcconfig"; sourceTree = "<group>"; };
 		7936715D1E4F7FD800870EDF /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		7936715F1E5259D200870EDF /* TodoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoManager.swift; sourceTree = "<group>"; };
 		797784001E4160AA00D51C09 /* TodoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		797784031E4160AA00D51C09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		797784051E4160AA00D51C09 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				797784171E41708500D51C09 /* ViewControllerDetail.swift */,
 				797784191E41832500D51C09 /* ViewControllerAdd.swift */,
 				7936715D1E4F7FD800870EDF /* FirebaseManager.swift */,
+				7936715F1E5259D200870EDF /* TodoManager.swift */,
 			);
 			name = TodoApp;
 			path = Week4A;
@@ -235,6 +238,7 @@
 				797784061E4160AA00D51C09 /* ViewController.swift in Sources */,
 				797784041E4160AA00D51C09 /* AppDelegate.swift in Sources */,
 				797784181E41708500D51C09 /* ViewControllerDetail.swift in Sources */,
+				793671601E5259D200870EDF /* TodoManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

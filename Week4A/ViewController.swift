@@ -24,6 +24,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         return cell
     }
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        return data.count
@@ -38,4 +39,20 @@ class ViewController: UIViewController, UITableViewDataSource {
             // handle delete (by removing the data from your array and updating the tableview)
         }
     }
+    
+    func login() -> Bool {
+        let email = "gtmorais@gmail.com"
+        let password = "todoapp"
+        var success = false
+        
+                FirebaseManager.Login(email: email, password: password) { (success_:Bool) in
+                    if (success){
+                        success = success_
+                    }
+        }
+        
+        return success
+    }
+    
+
 }
