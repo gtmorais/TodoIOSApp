@@ -15,12 +15,11 @@ class TodoManager: NSObject {
     static let databaseRef = FIRDatabase.database().reference()
     static var todos = [Todo]()
     
-    static func addTodo(username:String, title:String, text:String){
-        let p = Todo(username: username, title: text, text: text)
+    static func addTodo(title:String, text:String){
+        let p = Todo(title: text, text: text)
         if(p.text != ""){
-            let uid = FIRAuth.auth()?.currentUser?.uid
-            let todo =  ["uid":uid!,
-                        "username":p.username,
+            //let uid = FIRAuth.auth()?.currentUser?.uid
+            let todo =  [
                         "title":p.title,
                         "text":p.text
             ]
@@ -28,24 +27,24 @@ class TodoManager: NSObject {
         }
     }
     
-    static func fillTodos(uid:String?, toId:String, completion: @escaping(_ result:String) -> Void) {
+    static func fillTodos(completion: @escaping(_ result:String) -> Void) {
         todos = []
-        let allTodos = databaseRef.child("todos")
+        let allTodos = databaseRef.child("Todos")
         print(allTodos)
-        let todo = databaseRef.child("todos").queryOrdered(byChild: "uid").queryEqual(toValue: FirebaseManager.currentUser?.uid).observe(.childAdded, with: {
+        let todo = databaseRef.child("Todos").observe(.childAdded, with: {
             snapshot in
             print(snapshot)
         })
         
-        databaseRef.child("todos").queryOrdered(byChild: "uid").queryEqual(toValue: FirebaseManager.currentUser?.uid).observe(.childAdded, with:{
+        print(todo)
+        
+        databaseRef.child("Todos").observe(.childAdded, with:{
             snapshot in
             print(snapshot)
             if let result = snapshot.value as? [String:AnyObject]{
-                let toIdCloud = result["toId"]! as! String
-                if(toIdCloud == toId){
-                    let p = Todo(username: result["username"]! as! String, title: result["title"]! as! String, text: result["text"]! as! String)
+                    let p = Todo(title: result["Title"]! as! String, text: result["Text"]! as! String)
                     TodoManager.todos.append(p)
-                }
+                
             }
             completion("")
         })
@@ -57,8 +56,9 @@ class Todo {
     var text: String = ""
     var title:String = ""
     
-    init(username:String, title: String, text:String){
-        self.username = username
+    init(){}
+    
+    init(title: String, text:String){
         self.text = text
         self.title = title
     }

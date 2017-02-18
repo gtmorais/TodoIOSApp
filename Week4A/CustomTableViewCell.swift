@@ -10,8 +10,10 @@ import UIKit
 
 class CustomTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var cellTitle: UILabel!
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var cellLabel: UITextView!
+    
     
     @IBAction func switchChange(_ sender: UISwitch) {
         print("Switched")
@@ -26,14 +28,12 @@ class CustomTableViewCell: UITableViewCell {
             cellLabel.textColor = UIColor.lightGray
             cellLabel.font = UIFont.italicSystemFont(ofSize: 20)
         }
-        
     }
     
-    @IBAction func editButton(_ sender: UIButton) {
-        print("Clicked")
-        
-        
-    }
+    @IBAction func editButton(_ sender: UIButton){
+            print("Clicked")
+  
+        }
     
     
     override func awakeFromNib() {
