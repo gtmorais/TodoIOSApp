@@ -11,8 +11,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-    let todo = Todo()
-    
+    var todo = Todo()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,15 +27,12 @@ class ViewController: UIViewController, UITableViewDataSource {
             }
         }
     }
-        
-
-    let data : [String] = ["Task 1", "Task 2", "Task 3 - Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu"]
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "rows", for: indexPath) as! CustomTableViewCell
         
-        cell.cellTitle?.text = TodoManager.todos[indexPath.row].title //data[indexPath.row]
-        cell.cellLabel?.text = TodoManager.todos[indexPath.row].text //data[indexPath.row]
+        cell.cellTitle?.text = TodoManager.todos[indexPath.row].title
+        cell.cellLabel?.text = TodoManager.todos[indexPath.row].text
         
         return cell
     }
@@ -56,10 +52,17 @@ class ViewController: UIViewController, UITableViewDataSource {
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        todo = TodoManager.todos[indexPath.row]
+        self.performSegue(withIdentifier: "showEdit", sender: self)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let nextScene =  segue.destination as! ViewControllerDetail
-
-        nextScene.todo = Todo(title: "title", text: "text")
+        if (segue.identifier == "showEdit")
+        {
+            let nextScene =  segue.destination as! ViewControllerDetail
+            nextScene.todo = todo;
+        }
     }
 
     func login() -> Bool {

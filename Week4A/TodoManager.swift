@@ -16,14 +16,16 @@ class TodoManager: NSObject {
     static var todos = [Todo]()
     
     static func addTodo(title:String, text:String){
-        let p = Todo(title: text, text: text)
-        if(p.text != ""){
+        let todo = Todo(title: title, text: text, done: false)
+        if (title != ""){
             //let uid = FIRAuth.auth()?.currentUser?.uid
-            let todo =  [
-                        "title":p.title,
-                        "text":p.text
+            let todoNew =  [
+                        "title":todo.title,
+                        "text":todo.text
+                //,
+                //        "done":todo.done
             ]
-            databaseRef.child("todos").childByAutoId().setValue(todo)
+            databaseRef.child("todos").childByAutoId().setValue(todoNew)
         }
     }
     
@@ -42,7 +44,7 @@ class TodoManager: NSObject {
             snapshot in
             print(snapshot)
             if let result = snapshot.value as? [String:AnyObject]{
-                    let p = Todo(title: result["Title"]! as! String, text: result["Text"]! as! String)
+                    let p = Todo(title: result["Title"]! as! String, text: result["Text"]! as! String, done: result["Done"]! as! Bool)
                     TodoManager.todos.append(p)
                 
             }
@@ -55,11 +57,13 @@ class Todo {
     var username:String = ""
     var text: String = ""
     var title:String = ""
+    var done:Bool = false
     
     init(){}
     
-    init(title: String, text:String){
+    init(title: String, text:String, done:Bool){
         self.text = text
         self.title = title
+        self.done = done
     }
 }
