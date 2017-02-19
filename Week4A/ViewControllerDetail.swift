@@ -9,25 +9,35 @@
 import UIKit
 
 class ViewControllerDetail: UIViewController {
-    var todo:Todo?
+    @IBOutlet weak var textTitle: UITextField!
+    @IBOutlet weak var textText: UITextView!
+    @IBOutlet weak var switchDone: UISwitch!
+    
+    var id:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Alerta()
+        //Alerta()
         
     }
     
-//        let alert = UIAlertController(title: "Do something", message: "With this", preferredStyle: .actionSheet)
-//        alert.addAction(UIAlertAction(title: "A thing", style: .default) { action in
-//            action.title
-//            // perhaps use action.title here
-//        })
-//        noteTextView?.contentInset = UIEdgeInsetsMake(-70.0,0.0,0,0.0)
-//         Do any additional setup after loading the view.
+    override func viewDidAppear(_ animated: Bool) {
+
+        let todo = TodoManager.getTodo(id: id!) {  (result:String) in
+                DispatchQueue.main.async {
+                }
+        }
+                
+        textTitle.text = todo.title
+    }
+    
+    @IBAction func save(_ sender: UIBarButtonItem) {
+        
+    }
     
     func Alerta()
     {
-        let alertController = UIAlertController(title: "Destructive", message: todo?.title, preferredStyle: UIAlertControllerStyle.alert) //Replace UIAlertControllerStyle.Alert by UIAlertControllerStyle.alert
+        let alertController = UIAlertController(title: id, message: id, preferredStyle: UIAlertControllerStyle.alert) //Replace UIAlertControllerStyle.Alert by UIAlertControllerStyle.alert
         //    let DestructiveAction = UIAlertAction(title: "Destructive", style: UIAlertActionStyle.destructive) {
         //        (result : UIAlertAction) -> Void in
         //        print("Destructive")

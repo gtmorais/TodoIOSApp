@@ -11,6 +11,7 @@
 		791ABD8A1E5916120075874F /* CustomCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791ABD891E5916120075874F /* CustomCellDelegate.swift */; };
 		791ABD8C1E5932BB0075874F /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791ABD8B1E5932BB0075874F /* NavigationViewController.swift */; };
 		7920EC2B1E588BE4002BED81 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7920EC2A1E588BE4002BED81 /* GoogleService-Info.plist */; };
+		792494161E59E70200D2BF42 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792494151E59E70200D2BF42 /* Todo.swift */; };
 		7936715E1E4F7FD800870EDF /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7936715D1E4F7FD800870EDF /* FirebaseManager.swift */; };
 		793671601E5259D200870EDF /* TodoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7936715F1E5259D200870EDF /* TodoManager.swift */; };
 		797784041E4160AA00D51C09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797784031E4160AA00D51C09 /* AppDelegate.swift */; };
@@ -28,6 +29,7 @@
 		791ABD891E5916120075874F /* CustomCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCellDelegate.swift; sourceTree = "<group>"; };
 		791ABD8B1E5932BB0075874F /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		7920EC2A1E588BE4002BED81 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		792494151E59E70200D2BF42 /* Todo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		7936715D1E4F7FD800870EDF /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		7936715F1E5259D200870EDF /* TodoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoManager.swift; sourceTree = "<group>"; };
 		797784001E4160AA00D51C09 /* TodoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +75,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		792494141E59E6ED00D2BF42 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				792494151E59E70200D2BF42 /* Todo.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		792494171E59E72D00D2BF42 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				7936715D1E4F7FD800870EDF /* FirebaseManager.swift */,
+				7936715F1E5259D200870EDF /* TodoManager.swift */,
+			);
+			name = Firebase;
+			sourceTree = "<group>";
+		};
 		797783F71E4160AA00D51C09 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +113,8 @@
 		797784021E4160AA00D51C09 /* TodoApp */ = {
 			isa = PBXGroup;
 			children = (
+				792494171E59E72D00D2BF42 /* Firebase */,
+				792494141E59E6ED00D2BF42 /* Models */,
 				7920EC2A1E588BE4002BED81 /* GoogleService-Info.plist */,
 				797784031E4160AA00D51C09 /* AppDelegate.swift */,
 				797784051E4160AA00D51C09 /* ViewController.swift */,
@@ -104,8 +125,6 @@
 				797784151E41688800D51C09 /* CustomTableViewCell.swift */,
 				797784171E41708500D51C09 /* ViewControllerDetail.swift */,
 				797784191E41832500D51C09 /* ViewControllerAdd.swift */,
-				7936715D1E4F7FD800870EDF /* FirebaseManager.swift */,
-				7936715F1E5259D200870EDF /* TodoManager.swift */,
 				791ABD891E5916120075874F /* CustomCellDelegate.swift */,
 				791ABD8B1E5932BB0075874F /* NavigationViewController.swift */,
 			);
@@ -247,6 +266,7 @@
 				797784041E4160AA00D51C09 /* AppDelegate.swift in Sources */,
 				797784181E41708500D51C09 /* ViewControllerDetail.swift in Sources */,
 				793671601E5259D200870EDF /* TodoManager.swift in Sources */,
+				792494161E59E70200D2BF42 /* Todo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

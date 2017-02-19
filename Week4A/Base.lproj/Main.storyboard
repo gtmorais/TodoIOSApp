@@ -30,7 +30,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="156"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="c1U-dI-XLm" id="Xnb-ii-OS5">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="155"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="155.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qRY-mi-5MW">
@@ -91,6 +91,7 @@
                                             <outlet property="cellLabel" destination="pZc-TS-dfn" id="BOw-OT-Ftk"/>
                                             <outlet property="cellTitle" destination="0gw-M9-BcM" id="D7d-9X-P4N"/>
                                             <outlet property="editButton" destination="Uvc-Ju-qh8" id="I8V-TP-9bz"/>
+                                            <outlet property="switch" destination="qRY-mi-5MW" id="ydi-xO-0qg"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -134,24 +135,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eiu-kg-lZ4">
+                                <rect key="frame" x="7" y="160" width="361" height="487"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zpA-C9-Irr">
+                                <rect key="frame" x="310" y="72" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PdL-r3-zfZ">
-                                <rect key="frame" x="7" y="83" width="361" height="30"/>
+                                <rect key="frame" x="7" y="109" width="361" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eiu-kg-lZ4">
-                                <rect key="frame" x="7" y="134" width="361" height="513"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="eiu-kg-lZ4" firstAttribute="trailing" secondItem="PdL-r3-zfZ" secondAttribute="trailing" id="F1O-kt-DI6"/>
-                            <constraint firstItem="PdL-r3-zfZ" firstAttribute="top" secondItem="cQB-01-NE0" secondAttribute="bottom" constant="19" id="Fh6-Rg-WpA"/>
+                            <constraint firstItem="PdL-r3-zfZ" firstAttribute="top" secondItem="cQB-01-NE0" secondAttribute="bottom" constant="45" id="Fh6-Rg-WpA"/>
                             <constraint firstItem="PdL-r3-zfZ" firstAttribute="leading" secondItem="KTs-M9-ofC" secondAttribute="leadingMargin" constant="-9" id="LXk-Uj-8lz"/>
                             <constraint firstItem="PdL-r3-zfZ" firstAttribute="centerX" secondItem="KTs-M9-ofC" secondAttribute="centerX" id="PQY-lX-8dg"/>
                             <constraint firstItem="eiu-kg-lZ4" firstAttribute="top" secondItem="PdL-r3-zfZ" secondAttribute="bottom" constant="21" id="T2c-Jm-nZr"/>
@@ -160,8 +164,17 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Details" id="iOJ-rM-utU">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="OZL-Of-rwv"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="OZL-Of-rwv">
+                            <connections>
+                                <action selector="save:" destination="VmA-F1-Mun" id="SYb-AP-aQH"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="switchDone" destination="zpA-C9-Irr" id="XuV-w6-CY1"/>
+                        <outlet property="textText" destination="eiu-kg-lZ4" id="5Bt-7U-gPp"/>
+                        <outlet property="textTitle" destination="PdL-r3-zfZ" id="mce-B5-Gkd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PGS-4m-9l6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

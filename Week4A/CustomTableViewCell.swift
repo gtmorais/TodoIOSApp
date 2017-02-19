@@ -7,15 +7,18 @@
 //
 
 import UIKit
+import Foundation
 
 class CustomTableViewCell: UITableViewCell {
-    var delegate:CustomCellDelegate!
     @IBOutlet weak var cellTitle: UILabel!
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var cellLabel: UITextView!
-    var snapshot : String!
+    @IBOutlet weak var `switch`: UISwitch!
     
-    
+    var delegate:CustomCellDelegate!
+    var id : String!
+    var done: Bool!
+
     @IBAction func switchChange(_ sender: UISwitch) {
         print("Switched")
         
@@ -35,7 +38,7 @@ class CustomTableViewCell: UITableViewCell {
         print("Clicked")
         //let myTodo = Todo()
         if(self.delegate != nil){ //Just to be safe.
-            self.delegate.callSegueFromCell(myData: snapshot as String)
+            self.delegate.callSegueFromCell(myData: id as String)
         }
     }
     

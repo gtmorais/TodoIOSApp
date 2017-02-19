@@ -12,6 +12,7 @@ class ViewController: UIViewController, UITableViewDataSource, CustomCellDelegat
     
     @IBOutlet weak var tableView: UITableView!
     var todo = Todo()
+    var id: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,8 @@ class ViewController: UIViewController, UITableViewDataSource, CustomCellDelegat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "rows", for: indexPath) as! CustomTableViewCell
         
-        cell.snapshot = TodoManager.todos[indexPath.row].snapshot
+        cell.id = TodoManager.todos[indexPath.row].id
+        cell.done = TodoManager.todos[indexPath.row].done
         cell.cellTitle?.text = TodoManager.todos[indexPath.row].title
         cell.cellLabel?.text = TodoManager.todos[indexPath.row].text
         
@@ -44,23 +46,10 @@ class ViewController: UIViewController, UITableViewDataSource, CustomCellDelegat
 //        
 //        //Set the CustomCell new Delegate
 //        var cell = tableView.dequeueReusableCellWithIdentifier(customIdentifier) as MyCustomCell
-//        
-//        
 //        cell.delagete = self
 //        
 //        return cell
-//        
 //    }
-    
-    
-    //MARK: - MyCustomCellDelegator Methods
-    
-    func callSegueFromCell(myData dataobject: String) {
-        //TODO: set value from dataobject to global var that will be used on prepareforsegue
-        self.performSegue(withIdentifier: "showEdit", sender:dataobject )
-        
-    }
-
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        return TodoManager.todos.count
@@ -72,7 +61,8 @@ class ViewController: UIViewController, UITableViewDataSource, CustomCellDelegat
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.delete) {
-            // handle delete (by removing the data from your array and updating the tableview)
+            TodoManager.deleteTodo(todo: TodoManager.todos[indexPath.row])
+            viewDidAppear(true)
         }
     }
     
@@ -81,11 +71,16 @@ class ViewController: UIViewController, UITableViewDataSource, CustomCellDelegat
 //        self.performSegue(withIdentifier: "showEdit", sender: self)
 //    }
     
+    func callSegueFromCell(myData dataobject: String) {
+        id = dataobject
+        self.performSegue(withIdentifier: "showEdit", sender:dataobject)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "showEdit")
         {
             let nextScene =  segue.destination as! ViewControllerDetail
-            nextScene.todo = todo;
+            nextScene.id = id;
         }
     }
 
@@ -102,6 +97,4 @@ class ViewController: UIViewController, UITableViewDataSource, CustomCellDelegat
         
         return success
     }
-    
-
 }
