@@ -21,11 +21,12 @@ class TodoManager: NSObject {
             //let uid = FIRAuth.auth()?.currentUser?.uid
             let todoNew =  [
                         "title":todo.title,
-                        "text":todo.text
+                        "text":todo.text,
+                        "done":String(false)
                 //,
                 //        "done":todo.done
             ]
-            databaseRef.child("todos").childByAutoId().setValue(todoNew)
+            databaseRef.child("Todos").childByAutoId().setValue(todoNew)
         }
     }
     
@@ -44,7 +45,7 @@ class TodoManager: NSObject {
             snapshot in
             print(snapshot)
             if let result = snapshot.value as? [String:AnyObject]{
-                    let p = Todo(title: result["Title"]! as! String, text: result["Text"]! as! String, done: result["Done"]! as! Bool)
+                let p = Todo(snapshot: String(describing: result),title: result["title"]! as! String, text: result["text"]! as! String, done: NSString(string:result["done"]! as! String).boolValue )
                     TodoManager.todos.append(p)
                 
             }
@@ -58,10 +59,18 @@ class Todo {
     var text: String = ""
     var title:String = ""
     var done:Bool = false
+    var snapshot:String = ""
     
     init(){}
     
     init(title: String, text:String, done:Bool){
+        self.text = text
+        self.title = title
+        self.done = done
+    }
+    
+    init(snapshot: String, title: String, text:String, done:Bool){
+        self.snapshot = snapshot
         self.text = text
         self.title = title
         self.done = done

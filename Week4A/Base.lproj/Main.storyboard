@@ -13,7 +13,7 @@
         <!--Todo List-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TodoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Main" id="BYZ-38-t0r" customClass="ViewController" customModule="TodoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -202,8 +202,7 @@
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Tw1-Wq-tu8">
                                 <rect key="frame" x="16" y="214" width="343" height="433"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -224,17 +223,25 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add" id="a8F-Oi-tdf">
-                        <barButtonItem key="rightBarButtonItem" title="Add" id="6xz-lk-CpY"/>
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="6xz-lk-CpY">
+                            <connections>
+                                <action selector="addTodo:" destination="A5B-Jf-Duo" id="whM-dN-eXm"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="textText" destination="Tw1-Wq-tu8" id="UsU-Ns-ph2"/>
+                        <outlet property="textTitle" destination="KTV-Qq-uXg" id="gep-Ys-z59"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Og-BD-6yW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1997.5999999999999" y="-147.07646176911544"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation View Controller-->
         <scene sceneID="CoM-SO-7x9">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="h9N-Df-78v" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationMain" automaticallyAdjustsScrollViewInsets="NO" id="h9N-Df-78v" customClass="NavigationViewController" customModule="TodoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iJT-Py-NhB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

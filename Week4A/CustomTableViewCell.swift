@@ -9,10 +9,11 @@
 import UIKit
 
 class CustomTableViewCell: UITableViewCell {
-    
+    var delegate:CustomCellDelegate!
     @IBOutlet weak var cellTitle: UILabel!
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var cellLabel: UITextView!
+    var snapshot : String!
     
     
     @IBAction func switchChange(_ sender: UISwitch) {
@@ -31,10 +32,12 @@ class CustomTableViewCell: UITableViewCell {
     }
     
     @IBAction func editButton(_ sender: UIButton){
-            print("Clicked")
-  
+        print("Clicked")
+        //let myTodo = Todo()
+        if(self.delegate != nil){ //Just to be safe.
+            self.delegate.callSegueFromCell(myData: snapshot as String)
         }
-    
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

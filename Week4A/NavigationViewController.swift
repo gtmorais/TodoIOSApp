@@ -1,33 +1,21 @@
 //
-//  ViewControllerAdd.swift
-//  Week4A
+//  NavigationViewController.swift
+//  TodoApp
 //
-//  Created by Guilherme Morais on 2017-01-31.
+//  Created by Guilherme Morais on 2017-02-18.
 //  Copyright © 2017 Guilherme Morais. All rights reserved.
 //
 
 import UIKit
 
-class ViewControllerAdd: UIViewController {
+class NavigationViewController: UINavigationController {
 
-    @IBOutlet weak var textTitle: UITextField!
-    
-    @IBOutlet weak var textText: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func addTodo(_ sender: Any) {
-        TodoManager.addTodo(title: textTitle.text!, text: textText.text!)
-        
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "NavigationMain") as! NavigationViewController
-        self.present(nextViewController, animated:true, completion:nil)
-        
-    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
