@@ -14,6 +14,7 @@ import FirebaseAuth
 class TodoManager: NSObject {
     static let databaseRef = FIRDatabase.database().reference()
     static var todos = [Todo]()
+    static var todo = Todo()
     
     static func addTodo(title:String, text:String){
         let todo = Todo(title: title, text: text, done: false)
@@ -23,8 +24,6 @@ class TodoManager: NSObject {
                         "title":todo.title,
                         "text":todo.text,
                         "done":String(false)
-                //,
-                //        "done":todo.done
             ]
             databaseRef.child("Todos").childByAutoId().setValue(todoNew)
         }
@@ -33,6 +32,16 @@ class TodoManager: NSObject {
     static func deleteTodo(todo:Todo){
         databaseRef.child("Todos").child(todo.id).removeValue()
      }
+    
+    static func updateTodo(todo:Todo)
+    {
+        databaseRef.child("Todos").child(todo.id).updateChildValues(
+            [
+                "done" : String(!todo.done),
+                "text" : todo.text,
+                "title" : todo.title,
+            ])
+    }
     
     static func fillTodos(completion: @escaping(_ result:String) -> Void) {
         TodoManager.todos.removeAll()
@@ -48,24 +57,26 @@ class TodoManager: NSObject {
             completion("")
         })
     }
-
     
     static func getTodo(id:String, completion: @escaping(_ result:String) -> Void) -> Todo {
-//        databaseRef.child("Todos").queryOrderedByKey().observe(.childAdded, with:{
+        let myTodo = todos.filter { t in t.id == id }.first
+        return myTodo!
+//        
+//        databaseRef.child("Todos").observe(.childAdded, with:{
 //            snapshot in
-//            print(snapshot.key)
-//
+//            print(snapshot)
+//            if (snapshot.key == id)
+//            {
+//                if let result = snapshot.value as? [String:AnyObject]{
+//                    todo.id = snapshot.key
+//                    todo.title = result["title"]! as! String
+//                    todo.text = result["text"]! as! String
+//                    todo.done = NSString(string:result["done"]! as! String).boolValue
+//                }
+//            }
+//            completion("")
 //        })
-            var myTodo=Todo()
-            databaseRef.child("Todos").queryEqual(toValue: "id", childKey: id).observe(.childAdded, with:{
-            snapshot in
-            print(snapshot)
-            if let result = snapshot.value as? [String:AnyObject]{
-                myTodo = Todo(id: snapshot.key,title: result["title"]! as! String, text: result["text"]! as! String, done: NSString(string:result["done"]! as! String).boolValue )
-            }
-            completion("")
-        })
-        
-        return myTodo
+//
+//        return todo
     }
 }

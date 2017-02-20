@@ -16,11 +16,13 @@ class ViewController: UIViewController, UITableViewDataSource, CustomCellDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        login()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
         //navigationController?.navigationBar.barTintColor = UIColor.lightText
         TodoManager.fillTodos() {  (result:String) in
             DispatchQueue.main.async {
@@ -36,20 +38,13 @@ class ViewController: UIViewController, UITableViewDataSource, CustomCellDelegat
         cell.done = TodoManager.todos[indexPath.row].done
         cell.cellTitle?.text = TodoManager.todos[indexPath.row].title
         cell.cellLabel?.text = TodoManager.todos[indexPath.row].text
+        cell.setDone(done: cell.done)
         
         cell.delegate = self
         
         return cell
     }
     
-//    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        
-//        //Set the CustomCell new Delegate
-//        var cell = tableView.dequeueReusableCellWithIdentifier(customIdentifier) as MyCustomCell
-//        cell.delagete = self
-//        
-//        return cell
-//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        return TodoManager.todos.count

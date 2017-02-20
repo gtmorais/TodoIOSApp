@@ -18,20 +18,35 @@ class CustomTableViewCell: UITableViewCell {
     var delegate:CustomCellDelegate!
     var id : String!
     var done: Bool!
+    
+    func setDone(done:Bool)
+    {
+        `switch`.isOn = !done
+        if (done) {
+            cellLabel.textColor = UIColor.lightGray
+            cellTitle.textColor = UIColor.darkGray
+        }
+    }
 
     @IBAction func switchChange(_ sender: UISwitch) {
         print("Switched")
         
-        if (sender.isOn)
-        {
-            cellLabel.textColor = UIColor.black
-            //cellLabel.font = UIFont.boldSystemFont(ofSize: 20)
-        }
-        else
-        {
+        if (!sender.isOn) {
+            cellTitle.textColor = UIColor.darkGray
             cellLabel.textColor = UIColor.lightGray
-            cellLabel.font = UIFont.italicSystemFont(ofSize: 20)
         }
+        else{
+            cellTitle.textColor = UIColor.blue
+            cellLabel.textColor = UIColor.black
+        }
+        
+        let todo = TodoManager.getTodo(id: id!) {  (result:String) in
+            DispatchQueue.main.async {
+            }
+        }
+
+        todo.done = !sender.isOn
+        TodoManager.updateTodo(todo:todo)
     }
     
     @IBAction func editButton(_ sender: UIButton){

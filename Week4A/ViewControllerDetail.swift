@@ -12,7 +12,7 @@ class ViewControllerDetail: UIViewController {
     @IBOutlet weak var textTitle: UITextField!
     @IBOutlet weak var textText: UITextView!
     @IBOutlet weak var switchDone: UISwitch!
-    
+    var todo = Todo()
     var id:String?
     
     override func viewDidLoad() {
@@ -22,17 +22,27 @@ class ViewControllerDetail: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-
-        let todo = TodoManager.getTodo(id: id!) {  (result:String) in
+        let mytodo = TodoManager.getTodo(id: id!) {  (result:String) in
                 DispatchQueue.main.async {
                 }
         }
+        todo = mytodo
                 
         textTitle.text = todo.title
+        textText.text = todo.text
+        switchDone.isOn = !todo.done
     }
     
     @IBAction func save(_ sender: UIBarButtonItem) {
+        todo.text = textText.text
+        todo.done = !switchDone.isOn
+        todo.title = textTitle.text!
+        TodoManager.updateTodo(todo:todo)
         
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "NavigationMain") as! NavigationViewController
+        self.present(nextViewController, animated:true, completion:nil)
     }
     
     func Alerta()
