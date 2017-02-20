@@ -49,7 +49,6 @@
                                                     <state key="normal" title="Edit" image="ImageCompose"/>
                                                     <connections>
                                                         <action selector="editButton:" destination="c1U-dI-XLm" eventType="touchUpInside" id="tJj-cZ-qWp"/>
-                                                        <segue destination="VmA-F1-Mun" kind="show" identifier="showEdit" id="r0V-xU-4K5"/>
                                                     </connections>
                                                 </button>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9gE-Bb-PXO">
@@ -117,6 +116,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="KKY-oX-bl6" id="L9U-Cs-ZQL"/>
+                        <segue destination="VmA-F1-Mun" kind="show" identifier="showEdit" id="r9i-1f-mJ8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

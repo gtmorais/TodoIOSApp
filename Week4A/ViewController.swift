@@ -79,7 +79,7 @@ class ViewController: UIViewController, UITableViewDataSource, CustomCellDelegat
         }
     }
 
-    func login() -> Bool {
+    func login() -> Void {//-> Bool {
         let email = "gtmorais@gmail.com"
         let password = "todoapp"
         var success = false
@@ -90,6 +90,6 @@ class ViewController: UIViewController, UITableViewDataSource, CustomCellDelegat
             }
         }
         
-        return success
+        //return success
     }
 }
