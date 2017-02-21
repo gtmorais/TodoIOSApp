@@ -33,15 +33,6 @@ class TodoManager: NSObject {
         databaseRef.child("Todos").child(todo.id).removeValue()
      }
     
-    static func updateTodo(todo:Todo)
-    {
-        databaseRef.child("Todos").child(todo.id).updateChildValues(
-            [
-                "done" : String(!todo.done),
-                "text" : todo.text,
-                "title" : todo.title,
-            ])
-    }
     
     static func fillTodos(completion: @escaping(_ result:String) -> Void) {
         TodoManager.todos.removeAll()
@@ -58,6 +49,21 @@ class TodoManager: NSObject {
         })
     }
     
+    static func updateTodo(todo:Todo)
+    {
+        databaseRef.child("Todos").child(todo.id).updateChildValues(
+            [
+                "done" : String(todo.done),
+                "text" : todo.text,
+                "title" : todo.title,
+                ])
+        
+            fillTodos() {  (result:String) in
+            DispatchQueue.main.async {
+            }
+        }
+    }
+
     static func getTodo(id:String, completion: @escaping(_ result:String) -> Void) -> Todo {
         let myTodo = todos.filter { t in t.id == id }.first
         return myTodo!

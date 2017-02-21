@@ -41,8 +41,8 @@ class CustomTableViewCell: UITableViewCell {
         }
         
         let todo = TodoManager.getTodo(id: id!) {  (result:String) in
-            DispatchQueue.main.async {
-            }
+//            DispatchQueue.main.async {
+//            }
         }
 
         todo.done = !sender.isOn
