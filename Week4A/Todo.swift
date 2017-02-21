@@ -4,10 +4,11 @@
 //
 //  Created by Guilherme Morais on 2017-02-19.
 //  Copyright © 2017 Guilherme Morais. All rights reserved.
-//
+//  Student #300878610
 
 import Foundation
 
+//model class
 class Todo {
     var id:String = ""
     var username:String = ""

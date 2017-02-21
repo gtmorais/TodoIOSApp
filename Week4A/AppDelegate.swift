@@ -1,10 +1,10 @@
 //
 //  AppDelegate.swift
-//  Week4A
+//  TodoApp
 //
 //  Created by Guilherme Morais on 2017-01-31.
 //  Copyright © 2017 Guilherme Morais. All rights reserved.
-//
+//  Student #300878610
 
 import UIKit
 import Firebase

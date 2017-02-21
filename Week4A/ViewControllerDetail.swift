@@ -4,10 +4,11 @@
 //
 //  Created by Guilherme Morais on 2017-01-31.
 //  Copyright © 2017 Guilherme Morais. All rights reserved.
-//
+//  Student #300878610
 
 import UIKit
 
+//details viewcontroller
 class ViewControllerDetail: UIViewController {
     @IBOutlet weak var textTitle: UITextField!
     @IBOutlet weak var textText: UITextView!
@@ -33,6 +34,7 @@ class ViewControllerDetail: UIViewController {
         switchDone.isOn = !todo.done
     }
     
+    //save edited todo
     @IBAction func save(_ sender: UIBarButtonItem) {
         todo.text = textText.text
         todo.done = !switchDone.isOn

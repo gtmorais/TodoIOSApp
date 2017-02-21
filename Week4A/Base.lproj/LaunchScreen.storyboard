@@ -21,6 +21,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="q8E-UP-IT7">
+                                <rect key="frame" x="113" y="120" width="149" height="143"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="143" id="hF0-Cs-6uy"/>
+                                    <constraint firstAttribute="width" constant="149" id="mSh-eY-qd4"/>
+                                </constraints>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Todo App" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlh-L7-JVn">
                                 <rect key="frame" x="141" y="298" width="93" height="29"/>
                                 <constraints>
@@ -32,21 +39,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MAPD " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpS-fw-c4s">
-                                <rect key="frame" x="160" y="613" width="55" height="21"/>
+                                <rect key="frame" x="163" y="613" width="49" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="55" id="jaH-fw-ObP"/>
+                                    <constraint firstAttribute="width" constant="49" id="jaH-fw-ObP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="q8E-UP-IT7">
-                                <rect key="frame" x="113" y="120" width="149" height="143"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="143" id="hF0-Cs-6uy"/>
-                                    <constraint firstAttribute="width" constant="149" id="mSh-eY-qd4"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>

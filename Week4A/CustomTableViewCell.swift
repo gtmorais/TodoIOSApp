@@ -1,10 +1,11 @@
 //
 //  CustomTableViewCell.swift
-//  Week4A
+//  ToDo App
 //
 //  Created by Guilherme Morais on 2017-01-31.
 //  Copyright © 2017 Guilherme Morais. All rights reserved.
-//
+//  Student #300878610
+
 
 import UIKit
 import Foundation
@@ -19,6 +20,7 @@ class CustomTableViewCell: UITableViewCell {
     var id : String!
     var done: Bool!
     
+    //set current cell to done
     func setDone(done:Bool)
     {
         `switch`.isOn = !done
@@ -28,12 +30,14 @@ class CustomTableViewCell: UITableViewCell {
         }
     }
 
+    //mark todo state
     @IBAction func switchChange(_ sender: UISwitch) {
         print("Switched")
         
         if (!sender.isOn) {
             cellTitle.textColor = UIColor.darkGray
             cellLabel.textColor = UIColor.lightGray
+            self.backgroundColor = UIColor.red
         }
         else{
             cellTitle.textColor = UIColor.blue
@@ -49,6 +53,7 @@ class CustomTableViewCell: UITableViewCell {
         TodoManager.updateTodo(todo:todo)
     }
     
+    //edit button touch segue to editcontroller
     @IBAction func editButton(_ sender: UIButton){
         print("Clicked")
         //let myTodo = Todo()
@@ -63,6 +68,7 @@ class CustomTableViewCell: UITableViewCell {
         
             }
 
+    //set the current cell as selected
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

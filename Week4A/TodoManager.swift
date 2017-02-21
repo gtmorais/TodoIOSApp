@@ -4,18 +4,21 @@
 //
 //  Created by Guilherme Morais on 2017-02-13.
 //  Copyright © 2017 Guilherme Morais. All rights reserved.
-//
+//  Student #300878610
 
 import UIKit
 import Firebase
 import FirebaseDatabase
 import FirebaseAuth
 
+//manages all persistence to firebase
 class TodoManager: NSObject {
     static let databaseRef = FIRDatabase.database().reference()
     static var todos = [Todo]()
     static var todo = Todo()
     
+    
+    //add item to firebase
     static func addTodo(title:String, text:String){
         let todo = Todo(title: title, text: text, done: false)
         if (title != ""){
@@ -29,6 +32,7 @@ class TodoManager: NSObject {
         }
     }
     
+    //delete todo from firebase
     static func deleteTodo(todo:Todo){
         databaseRef.child("Todos").child(todo.id).removeValue()
      }
@@ -49,6 +53,7 @@ class TodoManager: NSObject {
         })
     }
     
+    //update todo on firebase
     static func updateTodo(todo:Todo)
     {
         databaseRef.child("Todos").child(todo.id).updateChildValues(
@@ -64,6 +69,7 @@ class TodoManager: NSObject {
         }
     }
 
+    //get single todo from collection
     static func getTodo(id:String, completion: @escaping(_ result:String) -> Void) -> Todo {
         let myTodo = todos.filter { t in t.id == id }.first
         return myTodo!

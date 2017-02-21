@@ -1,13 +1,14 @@
 //
 //  ViewController.swift
-//  Week4A
+//  TodoApp
 //
 //  Created by Guilherme Morais on 2017-01-31.
 //  Copyright © 2017 Guilherme Morais. All rights reserved.
-//
+// Student #300878610
 
 import UIKit
 
+//main viewcontroller
 class ViewController: UIViewController, UITableViewDataSource, CustomCellDelegate {
     
     @IBOutlet weak var tableView: UITableView!
@@ -79,6 +80,7 @@ class ViewController: UIViewController, UITableViewDataSource, CustomCellDelegat
         }
     }
 
+    //login to firebase
     func login() -> Void {//-> Bool {
         let email = "gtmorais@gmail.com"
         let password = "todoapp"

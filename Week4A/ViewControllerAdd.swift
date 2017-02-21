@@ -4,7 +4,7 @@
 //
 //  Created by Guilherme Morais on 2017-01-31.
 //  Copyright © 2017 Guilherme Morais. All rights reserved.
-//
+//  Student #300878610
 
 import UIKit
 
@@ -19,6 +19,7 @@ class ViewControllerAdd: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    //add new todo
     @IBAction func addTodo(_ sender: Any) {
         TodoManager.addTodo(title: textTitle.text!, text: textText.text!)
         
